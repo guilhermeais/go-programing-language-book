@@ -23,7 +23,18 @@ func TestFToC(t *testing.T) {
 	got := tempconv.FToC(f)
 
 	if got != want {
-		t.Fatalf("got %v want %v", got, f)
+		t.Fatalf("got %v want %v", got, want)
+	}
+}
+
+func TestKToC(t *testing.T) {
+	var k tempconv.Kelvin = 0
+	var want tempconv.Celsius = -273.15
+
+	got := tempconv.KToC(k)
+
+	if got != want {
+		t.Fatalf("got %v want %v", got, want)
 	}
 }
 
@@ -40,6 +51,15 @@ func TestFahrenheitString(t *testing.T) {
 	var c tempconv.Fahrenheit = 10
 	got := c.String()
 	want := "10°F"
+	if got != want {
+		t.Fatalf("got %v want %v", got, want)
+	}
+}
+
+func TestKelvinString(t *testing.T) {
+	var c tempconv.Kelvin = 10
+	got := c.String()
+	want := "10°K"
 	if got != want {
 		t.Fatalf("got %v want %v", got, want)
 	}
