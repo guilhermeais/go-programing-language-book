@@ -6,12 +6,12 @@ import (
 )
 
 const (
-	width, height = 600, 200     // tamanho do canvas em pixels
-	cells         = 100          // n° de células da grade
-	xyrange       = 30.0         // intervalos dos eixos (-xyrange..+xyrange)
-	xyscale       = width / 2    // pixels por unidade x ou y
-	zscale        = height * 0.4 // pixels por unidade x
-	angle         = math.Pi / 6  // ângulo dos eixos x, y (=30°)
+	width, height = 600, 200            // tamanho do canvas em pixels
+	cells         = 100                 // n° de células da grade
+	xyrange       = 30.0                // intervalos dos eixos (-xyrange..+xyrange)
+	xyscale       = width / 2 / xyrange // pixels por unidade x ou y
+	zscale        = height * 0.4        // pixels por unidade x
+	angle         = math.Pi / 6         // ângulo dos eixos x, y (=30°)
 )
 
 var sin30, cos30 = math.Sin(angle), math.Cos(angle) // seno(30°), cosseno(30°)
